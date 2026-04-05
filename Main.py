@@ -10,7 +10,7 @@ while True:
     print("\n--- Menú Principal ---")
     print("1. Agregar un producto al carrito")
     print("2. Calcular el total de la compra ")
-    print("3. Mostrar la información (Tarea de Laura)")
+    print("3. Mostrar la información")
     print("4. Salir")
 
     opcion = input("Elige una opción (1, 2, 3 o 4): ")
