@@ -10,7 +10,7 @@ while True:
     print("\n--- Menú Principal ---")
     print("1. Agregar un producto al carrito")
     print("2. Calcular el total de la compra ")
-    print("3. Mostrar la información")
+    print("3. Mostrar la información (Tarea de Laura)")
     print("4. Salir")
 
     opcion = input("Elige una opción (1, 2, 3 o 4): ")
@@ -18,15 +18,18 @@ while True:
     
     if opcion == "1":
         print("\n--- Agregando Producto ---")
-        nombre = input("Ingresa el nombre del producto: ")
+        nombre = input("Ingresa el nombre del producto: ").strip().title()
         precio = float(input("Ingresa el precio unitario: "))
         cantidad = int(input("¿Cuántas unidades deseas llevar?: "))
         
-        nombres_productos.append(nombre)
-        precios_productos.append(precio)
-        cantidades_productos.append(cantidad)
-        
-        print("¡Producto guardado exitosamente en el carrito!")
+        if precio <= 0 or cantidad <= 0:
+            print(">> Error: El precio y la cantidad deben ser mayores a cero.")
+            print(">> Operación cancelada. El producto no fue guardado.")
+        else:
+            nombres_productos.append(nombre)
+            precios_productos.append(precio)
+            cantidades_productos.append(cantidad)
+            print("¡Producto guardado exitosamente en el carrito!")
        
     
     elif opcion == "2":
@@ -63,7 +66,6 @@ while True:
             print("-" * 30)
             print(f"TOTAL A PAGAR: ${total_acumulado}")
         print("="*30)
-        
         
     elif opcion == "4":
         print("¡Gracias por usar la tienda escolar! Apagando sistema...")
