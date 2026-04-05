@@ -41,10 +41,16 @@ while True:
         print("El total actual de tu compra es: $" + str(total_compra))
         
     elif opcion == "3":
-        print("\n--- Información Registrada (Diagnóstico) ---")
-        print("Nombres guardados:", nombres_productos)
-        print("Precios guardados:", precios_productos)
-        print("Cantidades guardadas:", cantidades_productos)
+        print("\n--- Inventario de la Compra ---")
+        
+        if len(nombres_productos) == 0:
+            print("El carrito está vacío en este momento.")
+        else:
+            
+            for i in range(len(nombres_productos)):
+                print("Producto:", nombres_productos[i], 
+                      "| Precio: $", precios_productos[i], 
+                      "| Cantidad:", cantidades_productos[i])
         
         
     elif opcion == "4":
