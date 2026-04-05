@@ -10,7 +10,7 @@ while True:
     print("\n--- Menú Principal ---")
     print("1. Agregar un producto al carrito")
     print("2. Calcular el total de la compra ")
-    print("3. Mostrar la información (Tarea de Laura)")
+    print("3. Mostrar la información ")
     print("4. Salir")
 
     opcion = input("Elige una opción (1, 2, 3 o 4): ")
@@ -24,12 +24,15 @@ while True:
         
         if precio <= 0 or cantidad <= 0:
             print(">> Error: El precio y la cantidad deben ser mayores a cero.")
-            print(">> Operación cancelada. El producto no fue guardado.")
         else:
             nombres_productos.append(nombre)
             precios_productos.append(precio)
             cantidades_productos.append(cantidad)
-            print("¡Producto guardado exitosamente en el carrito!")
+            
+            # Feedback dinámico usando f-strings
+            print("-" * 30)
+            print(f"¡Éxito! Se agregaron {cantidad} unidad(es) de '{nombre}' al carrito.")
+            print(f"Precio unitario registrado: ${precio}")
        
     
     elif opcion == "2":
@@ -51,7 +54,7 @@ while True:
         if len(nombres_productos) == 0:
             print("  No hay productos registrados.")
         else:
-            total_acumulado = 0 # Calculamos el total al vuelo para la factura
+            total_acumulado = 0 
             
             for i in range(len(nombres_productos)):
                 nombre = nombres_productos[i]
@@ -60,7 +63,6 @@ while True:
                 subtotal = precio * cantidad
                 total_acumulado = total_acumulado + subtotal
                 
-                # Usamos f-strings (f"") para darle un formato de texto muy limpio
                 print(f"- {cantidad}x {nombre} ..... ${precio} (Subtotal: ${subtotal})")
             
             print("-" * 30)
