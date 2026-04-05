@@ -41,16 +41,28 @@ while True:
         print("El total actual de tu compra es: $" + str(total_compra))
         
     elif opcion == "3":
-        print("\n--- Inventario de la Compra ---")
+        print("\n" + "="*30)
+        print("      RECIBO DE COMPRA")
+        print("="*30)
         
         if len(nombres_productos) == 0:
-            print("El carrito está vacío en este momento.")
+            print("  No hay productos registrados.")
         else:
+            total_acumulado = 0 # Calculamos el total al vuelo para la factura
             
             for i in range(len(nombres_productos)):
-                print("Producto:", nombres_productos[i], 
-                      "| Precio: $", precios_productos[i], 
-                      "| Cantidad:", cantidades_productos[i])
+                nombre = nombres_productos[i]
+                precio = precios_productos[i]
+                cantidad = cantidades_productos[i]
+                subtotal = precio * cantidad
+                total_acumulado = total_acumulado + subtotal
+                
+                # Usamos f-strings (f"") para darle un formato de texto muy limpio
+                print(f"- {cantidad}x {nombre} ..... ${precio} (Subtotal: ${subtotal})")
+            
+            print("-" * 30)
+            print(f"TOTAL A PAGAR: ${total_acumulado}")
+        print("="*30)
         
         
     elif opcion == "4":
