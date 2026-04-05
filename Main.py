@@ -30,7 +30,15 @@ while True:
        
     
     elif opcion == "2":
-        print(">> Aquí pondremos el código para calcular el total.")
+        print("\n--- Calculando Total ---")
+        total_compra = 0  
+        
+        
+        for i in range(len(nombres_productos)):
+            subtotal = precios_productos[i] * cantidades_productos[i]
+            total_compra = total_compra + subtotal
+            
+        print("El total actual de tu compra es: $" + str(total_compra))
         
     elif opcion == "3":
         print(">> Aquí pondremos el código de Laura.")
