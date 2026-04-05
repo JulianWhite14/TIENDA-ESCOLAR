@@ -41,7 +41,11 @@ while True:
         print("El total actual de tu compra es: $" + str(total_compra))
         
     elif opcion == "3":
-        print(">> Aquí pondremos el código de Laura.")
+        print("\n--- Información Registrada (Diagnóstico) ---")
+        print("Nombres guardados:", nombres_productos)
+        print("Precios guardados:", precios_productos)
+        print("Cantidades guardadas:", cantidades_productos)
+        
         
     elif opcion == "4":
         print("¡Gracias por usar la tienda escolar! Apagando sistema...")
