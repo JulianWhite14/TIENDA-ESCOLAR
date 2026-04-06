@@ -37,14 +37,16 @@ while True:
     
     elif opcion == "2":
         print("\n--- Calculando Total ---")
-        total_compra = 0  
         
-        
-        for i in range(len(nombres_productos)):
-            subtotal = precios_productos[i] * cantidades_productos[i]
-            total_compra = total_compra + subtotal
-            
-        print("El total actual de tu compra es: $" + str(total_compra))
+        if len(nombres_productos) == 0:
+            print(">> No hay productos para calcular. El carrito está vacío.")
+        else:
+            total_compra = 0 
+            for i in range(len(nombres_productos)):
+                subtotal = precios_productos[i] * cantidades_productos[i]
+                total_compra += subtotal
+                
+            print(f"El total actual de tu compra es: ${total_compra}")
         
     elif opcion == "3":
         print("\n" + "="*30)
