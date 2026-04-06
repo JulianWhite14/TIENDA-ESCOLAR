@@ -45,8 +45,14 @@ while True:
             for i in range(len(nombres_productos)):
                 subtotal = precios_productos[i] * cantidades_productos[i]
                 total_compra += subtotal
+            
+            if total_compra > 10000:
+                descuento = total_compra * 0.10  # Calculamos el 10%
+                total_compra -= descuento        # Restamos el descuento usando -=
+                print(f"¡Felicidades! Tu compra superó los $10.000.")
+                print(f"Se te ha aplicado un descuento de: ${descuento}")
                 
-            print(f"El total actual de tu compra es: ${total_compra}")
+            print(f"El total definitivo a pagar es: ${total_compra}")
         
     elif opcion == "3":
         print("\n" + "="*30)
